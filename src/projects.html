@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Navbar with Animations</title>
+    <link rel="stylesheet" href="/input.css">
+    <link rel="stylesheet" href="/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="sticky top-0 z-50 flex justify-between items-center p-6 shadow-lg bg-[#663399] dark:bg-gray-800">
+        <!-- Left Section: Logo -->
+        <div class="flex items-center space-x-2">
+            <div class="image">
+                <a href="#about">
+                    <img src="/assets/mash.png" class="w-20 h-12 rounded-full aspect-square objec-cove" alt="Mash logo">
+                </a>
+            </div>
+        </div>
+
+        <!-- Middle Section: Navigation Links (Hidden on Mobile) -->
+        <ul class="hidden md:flex space-x-10 text-2xl font-extrabold">
+            <li><a href="/src/home.html" class="animated-underline text-[#e3d5ff] hover:text-[#c6aaff]">Home</a></li>
+            <li><a href="/src/projects.html" class="animated-underline text-[#e3d5ff] hover:text-[#c6aaff]">Projects</a>
+            </li>
+            <li><a href="/src/about.html" class="animated-underline text-[#e3d5ff] hover:text-[#c6aaff]">About</a></li>
+            <li><a href="/src/contact.html" class="animated-underline text-[#e3d5ff] hover:text-[#c6aaff]">Contact
+                    Me</a></li>
+            <li><a href="/src/cv.html" class="animated-underline text-[#e3d5ff] hover:text-[#c6aaff]">CV</a></li>
+        </ul>
+
+        <!-- Right Section: Dark Mode, Newsletter Signup, and Hamburger Menu -->
+        <div class="flex items-center space-x-4">
+            <!-- Dark Mode Toggle -->
+            <button id="darkModeToggle" class="p-2 bg-gray-200 rounded-full dark:bg-gray-700">
+                <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path d="M12 3.1A9.9 9.9 0 0 1 21 12a9.9 9.9 0 0 1-9 8.9 9.9 9.9 0 0 0 0-19.8z" />
+                </svg>
+            </button>
+
+            <!-- Newsletter Signup Button (Hidden on Mobile) -->
+            <a href="#" onclick="openModal()"
+                class="hidden md:inline px-4 py-2 bg-[#AA0000] text-[#e3d5ff] font-extrabold text-2xl rounded-full">Sign
+                Up</a>
+
+            <!-- Hamburger Menu Button (Visible on Mobile) -->
+            <button id="menuToggle" class="md:hidden p-2 text-gray-900 dark:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div id="mobileMenu"
+            class="hidden md:hidden absolute top-20 right-6 bg-white dark:bg-gray-800 w-3/4 p-4 rounded-lg shadow-lg">
+            <ul class="flex flex-col space-y-4 text-lg font-medium">
+                <li><a href="#home" class="animated-underline hover:text-blue-500">Home</a></li>
+                <li><a href="#projects" class="animated-underline hover:text-blue-500">Projects</a></li>
+                <li><a href="#about" class="animated-underline hover:text-blue-500">About</a></li>
+                <li><a href="#contact" class="animated-underline hover:text-blue-500">Contact Me</a></li>
+                <li><a href="#cv" class="animated-underline hover:text-blue-500">CV</a></li>
+                <li><a href="#" onclick="openModal()"
+                        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Sign
+                        Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section relative text-center py-16 px-6 lg:px-20">
+        <div class="overlay"></div> <!-- Background overlay for better readability -->
+        <div class="relative z-10">
+            <h2 class="text-4xl font-bold text-white dark:text-gray-200 mb-8 fade-in">My Projects</h2>
+            <p class="text-lg text-gray-300 dark:text-gray-400 max-w-xl mx-auto mb-12 fade-in">
+                A showcase of my latest work in web development, machine learning, and creative coding. Dive in to
+                explore the code behind each project.
+            </p>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div
+                    class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
+                    <img src="/assets/modern-futuristic-sci-fi-background.jpg" alt="Project 1"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project One</h3>
+                    <p class="text-gray-700 dark:text-gray-300">A brief description of this project, highlighting its
+                        features and technologies used.</p>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div
+                    class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
+                    <img src="/assets/modern-futuristic-sci-fi-background (2).jpg" alt="Project 2"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project Two</h3>
+                    <p class="text-gray-700 dark:text-gray-300">An engaging overview of this project, detailing its
+                        purpose and the skills applied.</p>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div
+                    class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
+                    <img src="/assets/3d-geometric-shapes-indoors-background.jpg" alt="Project 3"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project Three</h3>
+                    <p class="text-gray-700 dark:text-gray-300">A description summarizing this project’s impact and
+                        technical stack.</p>
+                </div>
+                <!-- Project Card 1 -->
+                <div
+                    class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
+                    <img src="/assets/modern-futuristic-sci-fi-background.jpg" alt="Project 1"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project One</h3>
+                    <p class="text-gray-700 dark:text-gray-300">A brief description of this project, highlighting its
+                        features and technologies used.</p>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div
+                    class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
+                    <img src="/assets/modern-futuristic-sci-fi-background (2).jpg" alt="Project 2"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project Two</h3>
+                    <p class="text-gray-700 dark:text-gray-300">An engaging overview of this project, detailing its
+                        purpose and the skills applied.</p>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div
+                    class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 p-6">
+                    <img src="/assets/3d-geometric-shapes-indoors-background.jpg" alt="Project 3"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project Three</h3>
+                    <p class="text-gray-700 dark:text-gray-300">A description summarizing this project’s impact and
+                        technical stack.</p>
+                </div>
+
+                <!-- Additional project cards can go here -->
+            </div>
+        </div>
+    </section>
+</body>
